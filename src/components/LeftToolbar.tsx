@@ -2,8 +2,10 @@ import React from 'react';
 import { useEditorStore } from '../store/editorStore';
 import { Type, Music, Wand, FileVideo, Image, Layers, Mic, Settings } from 'lucide-react';
 
+type ToolId = 'select' | 'video' | 'audio' | 'image' | 'text' | 'subtitle' | 'ai' | 'settings' | 'undo' | 'redo';
+
 interface Tool {
-  id: string;
+  id: ToolId;
   name: string;
   icon: any;
   shortcut?: string;

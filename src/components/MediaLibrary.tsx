@@ -67,7 +67,7 @@ const MediaLibrary: React.FC = () => {
 
       if (!result.canceled && result.filePaths.length > 0) {
         // Upload files to backend
-        const newItems = result.filePaths.map((filePath, index) => ({
+        const newItems = result.filePaths.map((filePath: string, index: number) => ({
           id: `new_${Date.now()}_${index}`,
           name: filePath.split('/').pop() || 'Unknown',
           type: filePath.endsWith('.mp3') || filePath.endsWith('.wav') ? 'audio' as const :

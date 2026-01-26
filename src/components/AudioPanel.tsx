@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, Waveform, Music, Mic, Settings, Sliders } from 'lucide-react';
+import { Volume2, VolumeX, AudioWaveform, Music, Mic, Settings, Sliders } from 'lucide-react';
 
 interface AudioTrack {
   id: string;
@@ -31,7 +31,7 @@ const AudioPanel: React.FC = () => {
     switch (type) {
       case 'music': return Music;
       case 'voice': return Mic;
-      default: return Waveform;
+      default: return AudioWaveform;
     }
   };
 

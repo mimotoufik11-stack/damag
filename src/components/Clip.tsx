@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { MoreVertical, Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { Play, Volume2, FileText, Image as ImageIcon, MoreVertical } from 'lucide-react';
 
 interface ClipProps {
   id: string;
@@ -96,8 +96,8 @@ const Clip: React.FC<ClipProps> = ({
     switch (type) {
       case 'video': return Play;
       case 'audio': return Volume2;
-      case 'subtitle': return '📝';
-      case 'image': return '🖼️';
+      case 'subtitle': return FileText;
+      case 'image': return ImageIcon;
       default: return Play;
     }
   };

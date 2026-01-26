@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Play, Video, Settings, HardDrive } from 'lucide-react';
+import { Download, Video, Settings, HardDrive } from 'lucide-react';
 
 interface ExportConfig {
   resolution: '720p' | '1080p' | '4K';
@@ -15,7 +15,7 @@ interface ExportPanelProps {
   onClose: () => void;
 }
 
-const ExportPanel: React.FC<ExportPanelProps> = ({ onClose }) => {
+const ExportPanel: React.FC<ExportPanelProps> = ({ onClose: _onClose }) => {
   const [config, setConfig] = useState<ExportConfig>({
     resolution: '1080p',
     format: 'mp4',
@@ -70,7 +70,7 @@ const ExportPanel: React.FC<ExportPanelProps> = ({ onClose }) => {
     '4K': { width: 3840, height: 2160 },
   };
 
-  const selectedResolution = resolutions[config.resolution];
+  const _selectedResolution = resolutions[config.resolution];
 
   return (
     <div className="p-4 space-y-6">

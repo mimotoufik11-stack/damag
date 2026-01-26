@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Type, Search, Download, Trash2, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Type, Search, Trash2, Star } from 'lucide-react';
 
 interface Font {
   id: string;

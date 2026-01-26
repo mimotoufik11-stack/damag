@@ -39,6 +39,10 @@ const EditorPage: React.FC = () => {
   };
 
   const getPanelContent = () => {
+    if (showExport) {
+      return <ExportPanel onClose={() => setShowExport(false)} />;
+    }
+    
     switch (activeTool) {
       case 'text':
         return <TextPanel />;
@@ -46,8 +50,6 @@ const EditorPage: React.FC = () => {
         return <AudioPanel />;
       case 'ai':
         return <AIToolsPanel />;
-      case 'export':
-        return <ExportPanel onClose={() => setShowExport(false)} />;
       default:
         return null;
     }

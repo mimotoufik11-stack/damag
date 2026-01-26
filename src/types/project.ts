@@ -1,3 +1,6 @@
+import { MediaItem } from './media';
+import { TimelineState } from './timeline';
+
 export interface Project {
   id: string;
   name: string;

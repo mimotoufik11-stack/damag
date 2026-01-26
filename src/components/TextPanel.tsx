@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Type, Plus, Trash2, Move, Palette, Shadow, Layers } from 'lucide-react';
+import { Type, Plus, Trash2, Move, CloudFog } from 'lucide-react';
 
 interface TextLayer {
   id: string;
@@ -201,7 +201,7 @@ const TextPanel: React.FC = () => {
           {/* Shadow */}
           <div>
             <label className="block text-xs text-slate-400 mb-1.5 flex items-center gap-1">
-              <Shadow className="w-3 h-3" />
+              <CloudFog className="w-3 h-3" />
               الظل
             </label>
             <div className="space-y-2">

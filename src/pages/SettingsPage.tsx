@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSettingsStore } from '../store/settingsStore';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { ArrowRight, Save, Moon, Sun, Monitor, HardDrive, Database, Globe, Bell } from 'lucide-react';
+import { ArrowRight, Save, Moon, Sun, Monitor, HardDrive, Database, Globe, FolderOpen } from 'lucide-react';
 
 interface Settings {
   theme: 'light' | 'dark' | 'system';
@@ -20,13 +19,38 @@ interface Settings {
 
 const SettingsPage: React.FC = () => {
   const navigate = useNavigate();
-  const { settings, updateSettings, resetSettings } = useSettingsStore();
-  const [localSettings, setLocalSettings] = useState<Settings>(settings);
+  const settingsStore = useSettingsStore();
+  const { updateSettings, resetSettings } = settingsStore;
+  const [localSettings, setLocalSettings] = useState<Settings>({
+    theme: settingsStore.theme,
+    language: settingsStore.language,
+    autoSave: settingsStore.autoSave,
+    autoSaveInterval: settingsStore.autoSaveInterval,
+    exportPath: settingsStore.exportPath,
+    exportQuality: settingsStore.exportQuality,
+    exportFormat: settingsStore.exportFormat,
+    notifications: settingsStore.notifications,
+    hardwareAcceleration: settingsStore.hardwareAcceleration,
+    maxUndoHistory: settingsStore.maxUndoHistory,
+    cacheSize: settingsStore.cacheSize,
+  });
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    setLocalSettings(settings);
-  }, [settings]);
+    setLocalSettings({
+      theme: settingsStore.theme,
+      language: settingsStore.language,
+      autoSave: settingsStore.autoSave,
+      autoSaveInterval: settingsStore.autoSaveInterval,
+      exportPath: settingsStore.exportPath,
+      exportQuality: settingsStore.exportQuality,
+      exportFormat: settingsStore.exportFormat,
+      notifications: settingsStore.notifications,
+      hardwareAcceleration: settingsStore.hardwareAcceleration,
+      maxUndoHistory: settingsStore.maxUndoHistory,
+      cacheSize: settingsStore.cacheSize,
+    });
+  }, [settingsStore]);
 
   const handleChange = (key: keyof Settings, value: any) => {
     setLocalSettings(prev => ({ ...prev, [key]: value }));
@@ -41,7 +65,19 @@ const SettingsPage: React.FC = () => {
 
   const handleReset = () => {
     resetSettings();
-    setLocalSettings(settings);
+    setLocalSettings({
+      theme: settingsStore.theme,
+      language: settingsStore.language,
+      autoSave: settingsStore.autoSave,
+      autoSaveInterval: settingsStore.autoSaveInterval,
+      exportPath: settingsStore.exportPath,
+      exportQuality: settingsStore.exportQuality,
+      exportFormat: settingsStore.exportFormat,
+      notifications: settingsStore.notifications,
+      hardwareAcceleration: settingsStore.hardwareAcceleration,
+      maxUndoHistory: settingsStore.maxUndoHistory,
+      cacheSize: settingsStore.cacheSize,
+    });
   };
 
   const handleSelectExportPath = async () => {

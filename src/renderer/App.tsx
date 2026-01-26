@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useUIStore } from './store/uiStore';
-import HomePage from './pages/HomePage';
-import EditorPage from './pages/EditorPage';
-import NewProjectPage from './pages/NewProjectPage';
-import SettingsPage from './pages/SettingsPage';
-import FontsPage from './pages/FontsPage';
-import Modal from './components/Modal';
-import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
+import { useUIStore } from '../store/uiStore';
+import HomePage from '../pages/HomePage';
+import EditorPage from '../pages/EditorPage';
+import NewProjectPage from '../pages/NewProjectPage';
+import SettingsPage from '../pages/SettingsPage';
+import FontsPage from '../pages/FontsPage';
+import Modal from '../components/Modal';
+import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 
 function App() {
   const { theme, modal } = useUIStore();
@@ -30,8 +30,9 @@ function App() {
 
       {modal.isOpen && (
         <Modal
+          isOpen={modal.isOpen}
           title={modal.title}
-          onClose={modal.onClose}
+          onClose={modal.onClose || (() => {})}
         >
           {modal.content}
         </Modal>

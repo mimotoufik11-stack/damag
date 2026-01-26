@@ -140,7 +140,6 @@ export function getArabicLigatures(): Record<string, string> {
     'لا': 'ﻸ',
     'لآ': 'ﻵ',
     'بإ': 'ﺒ',
-    'بإ': 'ﺒ',
     'فإ': 'ﻔ',
     'كإ': 'ﻜ',
     'لإ': 'ﻠ',
