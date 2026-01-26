@@ -12,6 +12,11 @@ node_modules/
 /out
 /release
 
+# Next.js
+.next/
+next-env.d.ts
+tsconfig.tsbuildinfo
+
 # Electron
 electron-builder.log
 electron-builder.yml.backup
