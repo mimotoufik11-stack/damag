@@ -1,0 +1,428 @@
+/* Timeline Specific Styles */
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  background: rgba(15, 23, 42, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-header {
+  height: 2rem;
+  background: rgba(30, 41, 59, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+/* Time Ruler */
+.timeline-ruler {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.timeline-ruler-tick {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.timeline-ruler-tick::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 6px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-ruler-tick.major::before {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Playhead */
+.timeline-playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #10b981;
+  z-index: 100;
+  pointer-events: none;
+  transition: left 0.05s ease-out;
+}
+
+.timeline-playhead::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+/* Tracks */
+.timeline-tracks {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.timeline-track {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease;
+}
+
+.timeline-track:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.timeline-track-header {
+  position: sticky;
+  right: 0;
+  width: 120px;
+  min-width: 120px;
+  background: rgba(30, 41, 59, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-track-type-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-track-type-video {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.timeline-track-type-audio {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.timeline-track-type-subtitle {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.timeline-track-type-image {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+/* Clips */
+.timeline-clip {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: grab;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.timeline-clip:active {
+  cursor: grabbing;
+}
+
+.timeline-clip.selected {
+  box-shadow: 0 0 0 2px #10b981;
+  z-index: 10;
+}
+
+.timeline-clip:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-clip.dragging {
+  opacity: 0.7;
+  transform: scale(1.02);
+}
+
+.timeline-clip-video {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(37, 99, 235, 0.8));
+}
+
+.timeline-clip-audio {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.8), rgba(5, 150, 105, 0.8));
+}
+
+.timeline-clip-subtitle {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.8), rgba(217, 119, 6, 0.8));
+}
+
+.timeline-clip-image {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.8), rgba(147, 51, 234, 0.8));
+}
+
+/* Clip Content */
+.timeline-clip-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.timeline-clip-thumbnail {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Clip Resize Handles */
+.timeline-clip-resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: ew-resize;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.timeline-clip:hover .timeline-clip-resize-handle,
+.timeline-clip.selected .timeline-clip-resize-handle {
+  opacity: 1;
+}
+
+.timeline-clip-resize-handle:hover {
+  background: #10b981;
+}
+
+.timeline-clip-resize-handle-left {
+  left: 0;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.timeline-clip-resize-handle-right {
+  right: 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Clip Drag Handle */
+.timeline-clip-drag-handle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  cursor: grab;
+}
+
+.timeline-clip:hover .timeline-clip-drag-handle {
+  opacity: 1;
+}
+
+/* Clip Badges */
+.timeline-clip-badge {
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  padding: 0.125rem 0.375rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+/* Clip Waveform (for audio) */
+.timeline-clip-waveform {
+  position: absolute;
+  inset: 4px;
+  opacity: 0.5;
+}
+
+/* Zoom Controls */
+.timeline-zoom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+}
+
+.timeline-zoom-slider {
+  width: 100px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+}
+
+.timeline-zoom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #10b981;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Time Display */
+.timeline-time-display {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: white;
+  pointer-events: none;
+}
+
+/* Selection Rectangle */
+.timeline-selection {
+  position: absolute;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  pointer-events: none;
+}
+
+/* Scrollbar customization for timeline */
+.timeline::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.5);
+  border-radius: 4px;
+}
+
+.timeline::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.7);
+}
+
+/* Drop Zone */
+.timeline-drop-zone {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px dashed rgba(16, 185, 129, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.timeline-drop-zone.active {
+  opacity: 1;
+}
+
+/* Snapping Line */
+.timeline-snap-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #f59e0b;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Markers */
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background: #ef4444;
+  cursor: pointer;
+  z-index: 60;
+  transform: translateX(-50%);
+}
+
+.timeline-marker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #ef4444;
+}
+
+/* Effects on clips */
+.timeline-clip-effect {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background: rgba(245, 158, 11, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.625rem;
+}
+
+/* Link between clips */
+.timeline-clip-link {
+  position: absolute;
+  height: 2px;
+  background: rgba(16, 185, 129, 0.5);
+  pointer-events: none;
+}
+
+/* Disabled clip */
+.timeline-clip.disabled {
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
