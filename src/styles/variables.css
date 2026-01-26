@@ -1,0 +1,232 @@
+/* CSS Variables - Custom Properties */
+
+:root {
+  /* Colors - Emerald */
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-300: #6ee7b7;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+
+  /* Colors - Gold/Amber */
+  --gold-50: #fffbeb;
+  --gold-100: #fef3c7;
+  --gold-200: #fde68a;
+  --gold-300: #fcd34d;
+  --gold-400: #fbbf24;
+  --gold-500: #f59e0b;
+  --gold-600: #d97706;
+  --gold-700: #b45309;
+  --gold-800: #92400e;
+  --gold-900: #78350f;
+
+  /* Colors - Slate (Dark Theme) */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  /* Colors - Teal */
+  --teal-50: #f0fdfa;
+  --teal-100: #ccfbf1;
+  --teal-200: #99f6e4;
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+  --teal-900: #134e4a;
+
+  /* Colors - Navy */
+  --navy-50: #f0f4ff;
+  --navy-100: #e0e9ff;
+  --navy-200: #c7d5ff;
+  --navy-300: #a4bbff;
+  --navy-400: #819aff;
+  --navy-500: #617fff;
+  --navy-600: #4f66ff;
+  --navy-700: #4154ee;
+  --navy-800: #3846d6;
+  --navy-900: #3138be;
+
+  /* Semantic Colors */
+  --color-primary: var(--emerald-500);
+  --color-primary-dark: var(--emerald-600);
+  --color-primary-light: var(--emerald-400);
+  --color-secondary: var(--gold-500);
+  --color-secondary-dark: var(--gold-600);
+  --color-secondary-light: var(--gold-400);
+
+  --color-success: var(--emerald-500);
+  --color-warning: var(--gold-500);
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Background Colors */
+  --bg-primary: var(--slate-900);
+  --bg-secondary: var(--slate-800);
+  --bg-tertiary: var(--slate-700);
+  --bg-elevated: rgba(30, 41, 59, 0.8);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --text-disabled: rgba(255, 255, 255, 0.3);
+
+  /* Border Colors */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-light: rgba(255, 255, 255, 0.05);
+  --border-color-dark: rgba(255, 255, 255, 0.2);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Typography */
+  --font-family-sans: 'Cairo', 'Noto Naskh Arabic', system-ui, sans-serif;
+  --font-family-serif: 'Amiri', 'Noto Naskh Arabic', serif;
+  --font-family-mono: 'Courier New', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+              0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
+              0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+              0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+
+  --shadow-glow-emerald: 0 0 10px rgba(16, 185, 129, 0.5),
+                         0 0 20px rgba(16, 185, 129, 0.3);
+  --shadow-glow-gold: 0 0 10px rgba(245, 158, 11, 0.5),
+                       0 0 20px rgba(245, 158, 11, 0.3);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-slower: 0.5s ease;
+
+  /* Z-Index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* Layout */
+  --header-height: 4rem;
+  --sidebar-width: 16rem;
+  --panel-width: 20rem;
+  --timeline-height: 16rem;
+
+  /* Scrollbar */
+  --scrollbar-width: 8px;
+  --scrollbar-track: rgba(15, 23, 42, 0.8);
+  --scrollbar-thumb: rgba(16, 185, 129, 0.5);
+
+  /* Overlay */
+  --overlay-color: rgba(0, 0, 0, 0.5);
+  --backdrop-blur: blur(10px);
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-primary: var(--slate-50);
+  --bg-secondary: var(--slate-100);
+  --bg-tertiary: var(--slate-200);
+  --bg-elevated: rgba(255, 255, 255, 0.9);
+  --bg-overlay: rgba(0, 0, 0, 0.3);
+
+  --text-primary: var(--slate-900);
+  --text-secondary: var(--slate-600);
+  --text-tertiary: var(--slate-500);
+  --text-disabled: var(--slate-400);
+
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color-light: rgba(0, 0, 0, 0.05);
+  --border-color-dark: rgba(0, 0, 0, 0.15);
+
+  --scrollbar-track: rgba(248, 250, 252, 0.8);
+  --scrollbar-thumb: rgba(16, 185, 129, 0.3);
+
+  --overlay-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Theme Variables (default) */
+[data-theme="dark"] {
+  --bg-primary: var(--slate-900);
+  --bg-secondary: var(--slate-800);
+  --bg-tertiary: var(--slate-700);
+  --bg-elevated: rgba(30, 41, 59, 0.8);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --text-disabled: rgba(255, 255, 255, 0.3);
+
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-light: rgba(255, 255, 255, 0.05);
+  --border-color-dark: rgba(255, 255, 255, 0.2);
+
+  --scrollbar-track: rgba(15, 23, 42, 0.8);
+  --scrollbar-thumb: rgba(16, 185, 129, 0.5);
+
+  --overlay-color: rgba(0, 0, 0, 0.5);
+}

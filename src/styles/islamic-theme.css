@@ -1,0 +1,325 @@
+/* Islamic Theme - دماج للقرآن الكريم */
+
+/* Color Palette */
+:root {
+  --emerald-primary: #10b981;
+  --emerald-light: #34d399;
+  --emerald-dark: #047857;
+  --gold-primary: #f59e0b;
+  --gold-light: #fbbf24;
+  --gold-dark: #d97706;
+  --teal-primary: #14b8a6;
+  --navy-primary: #1e3a5f;
+  --cream-primary: #fef3c7;
+  --sand-primary: #fde68a;
+}
+
+/* Islamic Patterns */
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Islamic Geometric Patterns */
+.geometric-pattern {
+  background-image: 
+    radial-gradient(circle at 0 0, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 100% 0, rgba(245, 158, 11, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 0 100%, rgba(245, 158, 11, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Ornate Borders */
+.border-islamic {
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #10b981, #f59e0b) 1;
+}
+
+.border-islamic-double {
+  position: relative;
+}
+
+.border-islamic-double::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Calligraphic Text */
+.font-calligraphy {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  font-weight: 700;
+}
+
+/* Bismillah Header */
+.bismillah {
+  font-family: 'Amiri', serif;
+  font-size: 1.5rem;
+  color: #f59e0b;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Quran Verse Styling */
+.quran-verse {
+  font-family: 'Amiri', serif;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #10b981;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.05);
+  border-right: 4px solid #10b981;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 1rem 0;
+}
+
+.verse-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f59e0b;
+  color: #0f172a;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 0 0.25rem;
+}
+
+/* Islamic Decorations */
+.decoration-star {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.decoration-star::before,
+.decoration-star::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px solid #f59e0b;
+  border-radius: 50%;
+}
+
+.decoration-star::after {
+  width: 50%;
+  height: 50%;
+  border-color: #10b981;
+}
+
+/* Moon and Star */
+.moon-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.moon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-radius: 50%;
+  position: relative;
+}
+
+.moon::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  background: #1e293b;
+  border-radius: 50%;
+}
+
+.star {
+  width: 12px;
+  height: 12px;
+  background: #f59e0b;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Gradient Backgrounds */
+.bg-islamic {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 25%, #0f172a 50%, #1e293b 75%, #0f172a 100%);
+}
+
+.bg-islamic-light {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 25%, #e2e8f0 50%, #cbd5e1 75%, #e2e8f0 100%);
+}
+
+/* Emerald and Gold Gradient */
+.bg-emerald-gold {
+  background: linear-gradient(135deg, #10b981 0%, #059669 25%, #f59e0b 50%, #d97706 75%, #10b981 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Text Effects */
+.text-glow {
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5),
+               0 0 20px rgba(16, 185, 129, 0.3),
+               0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.text-gold-glow {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5),
+               0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+/* Cards */
+.card-islamic {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.card-islamic:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.btn-islamic {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-islamic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-islamic:hover::before {
+  left: 100%;
+}
+
+.btn-islamic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Badges */
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge-gold {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Progress Bar */
+.progress-islamic {
+  height: 0.5rem;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-islamic-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #f59e0b, #10b981);
+  background-size: 200% 100%;
+  animation: progress-gradient 2s linear infinite;
+  border-radius: 9999px;
+}
+
+@keyframes progress-gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Scrollbar - Islamic Theme */
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #10b981, #f59e0b);
+  border-radius: 1rem;
+}
+
+/* Custom Selection */
+::selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: #f1f5f9;
+}
+
+::-moz-selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: #f1f5f9;
+}
+
+/* Utility Classes */
+.bg-pattern-overlay {
+  position: relative;
+}
+
+.bg-pattern-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}

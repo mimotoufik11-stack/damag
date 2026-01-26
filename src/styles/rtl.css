@@ -1,0 +1,430 @@
+/* RTL (Right-to-Left) Support for Arabic */
+
+/* Base RTL */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Logical Properties for RTL */
+[dir="rtl"] .ml-4 {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .mr-4 {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .pl-4 {
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+[dir="rtl"] .pr-4 {
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+[dir="rtl"] .ml-2 {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .pl-2 {
+  padding-right: 0.5rem;
+  padding-left: 0;
+}
+
+[dir="rtl"] .pr-2 {
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+
+/* Flexbox RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row;
+}
+
+[dir="rtl"] .justify-start {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .justify-end {
+  justify-content: flex-end;
+}
+
+/* Grid RTL */
+[dir="rtl"] .grid-cols-1,
+[dir="rtl"] .grid-cols-2,
+[dir="rtl"] .grid-cols-3,
+[dir="rtl"] .grid-cols-4,
+[dir="rtl"] .grid-cols-6,
+[dir="rtl"] .grid-cols-12 {
+  direction: ltr; /* Grid cells should be LTR internally */
+}
+
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Border Radius RTL fixes */
+[dir="rtl"] .rounded-l {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+[dir="rtl"] .rounded-r {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+/* Icon Rotation for RTL */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Arrow Icons */
+[dir="rtl"] .arrow-left {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .arrow-right {
+  transform: scaleX(-1);
+}
+
+/* Specific Components */
+[dir="rtl"] .dropdown-menu {
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .dropdown-item {
+  padding-left: 1rem;
+  padding-right: 3rem;
+}
+
+[dir="rtl"] .dropdown-item .icon {
+  left: auto;
+  right: 1rem;
+}
+
+/* Timeline RTL */
+[dir="rtl"] .timeline-track {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: none;
+}
+
+[dir="rtl"] .timeline-clip {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* Progress Bar RTL */
+[dir="rtl"] .progress-bar {
+  background: linear-gradient(90deg, #10b981, #f59e0b);
+}
+
+[dir="rtl"] .progress-fill {
+  right: 0;
+  left: auto;
+}
+
+/* Card RTL */
+[dir="rtl"] .card-action {
+  left: 1rem;
+  right: auto;
+}
+
+[dir="rtl"] .card-icon {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+/* Form Elements RTL */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="password"],
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+[dir="rtl"] .input-icon {
+  left: 1rem;
+  right: auto;
+}
+
+[dir="rtl"] .input-clear {
+  right: 1rem;
+  left: auto;
+}
+
+/* Modal RTL */
+[dir="rtl"] .modal-close {
+  left: 1rem;
+  right: auto;
+}
+
+[dir="rtl"] .modal-footer {
+  text-align: left;
+}
+
+/* Notification RTL */
+[dir="rtl"] .notification-icon {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .notification-close {
+  left: 0.5rem;
+  right: auto;
+}
+
+/* Tooltip RTL */
+[dir="rtl"] .tooltip-arrow {
+  left: 0;
+  right: auto;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .tooltip-arrow.top {
+  top: auto;
+  bottom: -0.5rem;
+  transform: rotate(90deg) translateX(-100%);
+}
+
+[dir="rtl"] .tooltip-arrow.bottom {
+  top: -0.5rem;
+  bottom: auto;
+  transform: rotate(-90deg) translateX(-100%);
+}
+
+/* Sidebar RTL */
+[dir="rtl"] .sidebar {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: none;
+}
+
+[dir="rtl"] .sidebar-item {
+  padding-right: 1.5rem;
+  padding-left: 1rem;
+}
+
+[dir="rtl"] .sidebar-item-icon {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+/* Breadcrumb RTL */
+[dir="rtl"] .breadcrumb-separator {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  transform: scaleX(-1);
+}
+
+/* Table RTL */
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+[dir="rtl"] .table-sort-icon {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+/* Badge RTL */
+[dir="rtl"] .badge {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Tags/Chips RTL */
+[dir="rtl"] .tag-remove {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+/* Tree View RTL */
+[dir="rtl"] .tree-item-icon {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .tree-item-expand {
+  transform: scaleX(-1);
+}
+
+/* Accordion RTL */
+[dir="rtl"] .accordion-icon {
+  transform: scaleX(-1);
+  transition: transform 0.3s ease;
+}
+
+[dir="rtl"] .accordion.open .accordion-icon {
+  transform: scaleX(-1) rotate(180deg);
+}
+
+/* Stepper RTL */
+[dir="rtl"] .stepper-item::after {
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .stepper-item::before {
+  right: 0;
+  left: auto;
+}
+
+/* Slider RTL */
+[dir="rtl"] .slider-track {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+}
+
+[dir="rtl"] .slider-thumb {
+  transform: translateX(50%);
+}
+
+/* Pagination RTL */
+[dir="rtl"] .pagination-item {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .pagination-prev {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .pagination-next {
+  transform: scaleX(-1);
+}
+
+/* Tabs RTL */
+[dir="rtl"] .tab-indicator {
+  transition: right 0.3s ease, left 0.3s ease;
+}
+
+/* Switch/Toggle RTL */
+[dir="rtl"] .switch-thumb {
+  transition: right 0.3s ease, left 0.3s ease;
+}
+
+[dir="rtl"] .switch.checked .switch-thumb {
+  right: 2px;
+  left: auto;
+}
+
+/* Rating Stars RTL */
+[dir="rtl"] .rating-star {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+/* File Upload RTL */
+[dir="rtl"] .file-item-name {
+  text-align: right;
+}
+
+[dir="rtl"] .file-item-remove {
+  left: 0;
+  right: auto;
+}
+
+/* Search RTL */
+[dir="rtl"] .search-icon {
+  left: 1rem;
+  right: auto;
+}
+
+[dir="rtl"] .search-clear {
+  right: 1rem;
+  left: auto;
+}
+
+/* Menu RTL */
+[dir="rtl"] .menu {
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .menu-item-icon {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* Submenu RTL */
+[dir="rtl"] .submenu {
+  left: 100%;
+  right: auto;
+}
+
+[dir="rtl"] .submenu .submenu-arrow {
+  transform: scaleX(-1);
+}
+
+/* Keyboard Shortcuts RTL */
+[dir="rtl"] .kbd {
+  letter-spacing: 0;
+}
+
+/* Scrollbar RTL positioning */
+[dir="rtl"] .custom-scroll::-webkit-scrollbar-thumb {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Helper classes */
+[dir="rtl"] .text-start {
+  text-align: right;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left;
+}
+
+[dir="rtl"] .float-start {
+  float: right;
+}
+
+[dir="rtl"] .float-end {
+  float: left;
+}
+
+/* Font optimization for Arabic */
+[dir="rtl"] * {
+  font-feature-settings: "cv01", "cv02", "cv03", "cv04", "cv05", "cv06", "cv07", "cv08", "cv09", "cv10";
+}
+
+/* Line height for Arabic */
+[dir="rtl"] p,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  line-height: 1.8;
+}
+
+/* Arabic numerals in RTL context */
+[dir="rtl"] .arabic-numerals {
+  font-variant-numeric: arabic-indic;
+}
+
+/* Force LTR for numbers and English text */
+[dir="rtl"] .ltr,
+[dir="rtl"] [dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Force RTL for Arabic text */
+[dir="ltr"] .rtl {
+  direction: rtl;
+  text-align: right;
+}
