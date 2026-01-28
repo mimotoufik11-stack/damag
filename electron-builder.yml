@@ -1,0 +1,18 @@
+appId: com.dammaj.quran
+productName: دماج للقرآن الكريم
+directories:
+  buildResources: assets
+  output: dist
+files:
+  - out/**/*
+  - electron/**/*
+  - backend/dist/**/*
+  - package.json
+win:
+  target:
+    - target: zip
+      arch:
+        - x64
+  sign: null
+  signAndEditExecutable: false
+  verifyUpdateCodeSignature: false

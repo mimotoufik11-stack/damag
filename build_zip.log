@@ -1,0 +1,5 @@
+npm warn Unknown env config "python". This will stop working in the next major version of npm.
+  • electron-builder  version=24.13.3 os=6.12.60
+  • loaded configuration  file=/home/engine/project/electron-builder.yml
+  • packaging       platform=win32 arch=x64 electron=28.3.3 appOutDir=dist/win-unpacked
+  • building        target=zip arch=x64 file=dist/دماج للقرآن الكريم-1.0.0-win.zip
