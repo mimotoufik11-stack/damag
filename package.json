@@ -1,12 +1,19 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "dammaj-quran",
+  "version": "1.0.0",
   "private": true,
+  "main": "electron.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "next build && next export",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "electron": "electron .",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "build:win": "next build && electron-builder -w",
+    "build:mac": "next build && electron-builder -m",
+    "build:linux": "next build && electron-builder -l"
   },
   "dependencies": {
     "next": "16.0.7",
@@ -18,9 +25,42 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
+    "electron": "^40.0.0",
+    "electron-builder": "^26.4.0",
+    "electron-is-dev": "^3.0.1",
     "eslint": "^9",
     "eslint-config-next": "16.0.7",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wait-on": "^9.0.3"
+  },
+  "build": {
+    "appId": "com.dammaj.quran",
+    "productName": "Dammaj Al-Quran",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron.js",
+      ".next/**/*",
+      "node_modules/**/*",
+      "public/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "public/favicon.ico",
+      "uninstallerIcon": "public/favicon.ico",
+      "installerHeader": "public/favicon.ico",
+      "installerSidebar": "public/favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Dammaj Al-Quran"
+    }
   }
 }
