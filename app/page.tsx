@@ -33,10 +33,13 @@ export default function Home() {
   useEffect(() => {
     fetchSurahs();
     // Check if running in Electron
-    if (typeof window !== 'undefined' && (window as Window & { electron?: { getAppVersion: () => Promise<string> } }).electron) {
-      (window as Window & { electron: { getAppVersion: () => Promise<string> } }).electron.getAppVersion().then((version: string) => {
-        setAppVersion(version);
-      });
+    if (typeof window !== 'undefined') {
+      const electronWindow = window as unknown as Window & { electron?: { getAppVersion: () => Promise<string> } };
+      if (electronWindow.electron) {
+        electronWindow.electron.getAppVersion().then((version: string) => {
+          setAppVersion(version);
+        });
+      }
     }
   }, []);
 
