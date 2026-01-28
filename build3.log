@@ -1,0 +1,8 @@
+npm warn Unknown env config "python". This will stop working in the next major version of npm.
+  • electron-builder  version=24.13.3 os=6.12.60
+  • loaded configuration  file=/home/engine/project/electron-builder.yml
+  • packaging       platform=win32 arch=x64 electron=28.3.3 appOutDir=dist/win-unpacked
+  • building        target=nsis file=dist/دماج للقرآن الكريم Setup 1.0.0.exe archs=x64 oneClick=false perMachine=false
+  • default Electron icon is used  reason=application icon is not set
+  • downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.1/nsis-3.0.4.1.7z size=1.3 MB parts=1
+  • downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.1/nsis-3.0.4.1.7z duration=501ms
