@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:static": "next build && next export",
     "start": "next start",
     "lint": "eslint",
     "electron": "electron .",
@@ -18,13 +17,30 @@
   "dependencies": {
     "next": "16.0.7",
     "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "react-dom": "19.2.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.6",
+    "@mui/material": "^6.4.6",
+    "@reduxjs/toolkit": "^2.6.0",
+    "react-redux": "^9.2.0",
+    "fabric": "^6.6.1",
+    "konva": "^9.3.18",
+    "react-konva": "^19.0.3",
+    "lru-cache": "^11.0.2",
+    "lodash": "^4.17.21",
+    "axios": "^1.8.1",
+    "socket.io-client": "^4.8.1",
+    "uuid": "^11.1.0",
+    "file-saver": "^2.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/lodash": "^4.17.15",
+    "@types/file-saver": "^2.0.7",
     "concurrently": "^9.2.1",
     "electron": "^40.0.0",
     "electron-builder": "^26.4.0",
@@ -33,11 +49,12 @@
     "eslint-config-next": "16.0.7",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wait-on": "^9.0.3"
+    "wait-on": "^9.0.3",
+    "rtlcss": "^4.3.0"
   },
   "build": {
     "appId": "com.dammaj.quran",
-    "productName": "Dammaj Al-Quran",
+    "productName": "Dammaj Al-Quran Video Editor",
     "directories": {
       "output": "dist"
     },
@@ -45,22 +62,20 @@
       "electron.js",
       ".next/**/*",
       "node_modules/**/*",
-      "public/**/*"
+      "public/**/*",
+      "backend/**/*"
     ],
     "win": {
-      "target": "nsis",
+      "target": "portable",
       "icon": "public/favicon.ico"
     },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "installerIcon": "public/favicon.ico",
-      "uninstallerIcon": "public/favicon.ico",
-      "installerHeader": "public/favicon.ico",
-      "installerSidebar": "public/favicon.ico",
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "Dammaj Al-Quran"
+    "mac": {
+      "target": "dmg",
+      "icon": "public/favicon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "public/favicon.ico"
     }
   }
 }
