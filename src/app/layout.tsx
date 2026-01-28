@@ -1,8 +1,3 @@
-export const metadata = {
-  title: 'Dammaj Al-Quran - محرر فيديوهات قرآنية',
-  description: 'Complete Quran Video Editing Application',
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -13,4 +8,9 @@ export default function RootLayout({
       <body>{children}</body>
     </html>
   )
+}
+
+export const metadata = {
+  title: 'Dammaj Al-Quran - محرر فيديوهات قرآنية',
+  description: 'Complete Quran Video Editing Application',
 }
